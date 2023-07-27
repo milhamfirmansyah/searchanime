@@ -17,7 +17,8 @@ function Home() {
         const response = await axios.get(`https://api.jikan.moe/v4/anime?q=${q}&sfw`);
         setData(response.data.data);
       } else {
-        setData([]);
+        const response = await axios.get(`https://api.jikan.moe/v4/anime`);
+        setData(response.data.data);
       }
     }, 300),
     []
